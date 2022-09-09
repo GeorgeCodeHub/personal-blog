@@ -7,6 +7,21 @@ import Image from "next/image";
 
 function PostCard({ post }: { post: any }) {
 	return (
+		<div className="card">
+			<div className="card-body">
+				<img src={post.frontmatter.cover_image} className="card-image" />
+				<h2 className="card-title">{post.frontmatter.title}</h2>
+				<p className="card-description">{post.frontmatter.excerpt}</p>
+			</div>
+			<button className="card-btn">
+				<Link href={`/blog/${post.slug}`}>
+					<span>Continue Reading</span>
+				</Link>
+			</button>
+		</div>
+	);
+
+	return (
 		<div>
 			<div>
 				<img src={post.frontmatter.cover_image} alt={post.frontmatter.title} />

@@ -2,42 +2,38 @@ import Head from "next/head";
 
 import fs from "fs";
 import path from "path";
-
-import { PostCard, CategoriesView, PostWidget } from "../components";
 import matter from "gray-matter";
 
-import { sortByDate } from "../utils";
+import { Typography } from "@mui/material";
 
-function Home({
-	posts
-}: {
-	posts: {
-		title: string;
-		excerpt: string;
-	}[];
-}) {
+import { PostCard, PostWidget, ProjectsView } from "../components";
+
+import { sortByDate } from "../utils";
+import { postType } from "../utils/types";
+
+function Home({ posts, mostRecentPosts }: { posts: postType[]; mostRecentPosts: postType[] }) {
 	return (
-		<div>
+		<div className="layout-container">
 			<Head>
-				<title>GeorgeCode Blog</title>
+				<title>Rocket Code Blog</title>
 				<meta
 					name="description"
 					content="George's Karampelas personal blog containing articles about personal/professional projects and experiences."
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div>
-				<div>
-					{posts.map((post, index) => (
-						<PostCard key={index} post={post} />
-					))}
-				</div>
-				<div>
-					<div>
-						<PostWidget />
-						<CategoriesView />
-					</div>
-				</div>
+			<Typography
+				style={{ marginTop: "1.5em", fontWeight: "lighter !important", letterSpacing: "1rem !important" }}
+				variant="h2"
+				gutterBottom
+			>
+				CAPTAIN'S LOG
+			</Typography>
+
+			<div className="wrapper">
+				{posts.map((post, index) => (
+					<PostCard key={index} post={post} />
+				))}
 			</div>
 		</div>
 	);
@@ -49,23 +45,28 @@ export async function getStaticProps() {
 	// Get files form the posts dir
 	const files = fs.readdirSync(path.join("posts"));
 
-	const posts = files.map((filename) => {
-		// Create slug
-		const slug = filename.replace(".md", "");
+	const posts = files
+		.map((filename) => {
+			// Create slug
+			const slug = filename.replace(".md", "");
 
-		// Get frontmatter
-		const readFile = fs.readFileSync(path.join("posts", filename), "utf-8");
-		const { data: frontmatter } = matter(readFile);
+			// Get frontmatter
+			const readFile = fs.readFileSync(path.join("posts", filename), "utf-8");
+			const { data: frontmatter } = matter(readFile);
 
-		return {
-			slug,
-			frontmatter
-		};
-	});
+			return {
+				slug,
+				frontmatter
+			};
+		})
+		.sort(sortByDate);
+
+	const mostRecentPosts = posts.slice(0, 5);
 
 	return {
 		props: {
-			posts: posts.sort(sortByDate)
+			posts: posts,
+			mostRecentPosts: mostRecentPosts
 		}
 	};
 }

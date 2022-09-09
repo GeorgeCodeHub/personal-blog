@@ -1,7 +1,7 @@
 import React from "react";
 
-function CategoriesView() {
+function ProjectsView() {
 	return <div>CategoriesView</div>;
 }
 
-export default CategoriesView;
+export default ProjectsView;
