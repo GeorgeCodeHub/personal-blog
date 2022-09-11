@@ -1,31 +1,21 @@
-/*   color variables */
-$clr-primary: #d50000;
-$clr-primary-hover: #29e6a7;
-$clr-primary-dark: #039d69;
-$clr-gray100: #f9fbff;
-$clr-gray150: #f4f6fb;
-$clr-gray200: #eef1f6;
-$clr-gray300: #e1e5ee;
-$clr-gray400: #767b91;
-$clr-gray500: #4f546c;
-$clr-gray600: #2a324b;
-$clr-gray700: #161d34;
+$medium-green: #1d5560;
+$bright-green: #4fbdba;
 
-/*   border radius */
 $radius: 0.2rem;
 
 .wrapper {
 	gap: 2rem;
-	width: 57%;
+	width: 64%;
 	display: grid;
 	padding: 40px;
 	border: 2px solid #1d5560;
 	background: #072227;
 	justify-content: center;
-	grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .card {
+	position: relative;
 	overflow: hidden;
 	background: #355b62;
 	border-radius: $radius;
@@ -35,30 +25,46 @@ $radius: 0.2rem;
 	cursor: pointer;
 	transition: transform 200ms ease-in;
 
+	&-date {
+		top: 12px;
+		left: 12px;
+		position: absolute;
+		font-weight: bold;
+		padding: 4px 8px;
+		border-radius: $radius;
+		color: black;
+		background-color: white;
+	}
+
 	&-image {
-		height: 15rem;
+		aspect-ratio: 1 / 1;
 		width: 100%;
 		object-fit: cover;
 	}
 
 	&-title {
 		padding: 1rem;
+		font-size: larger;
+		font-weight: bold;
 	}
 
 	&-description {
 		padding: 0 1rem;
+		font-weight: lighter;
 	}
 
-	&-btn {
-		padding: 1rem;
-		font-family: inherit;
-		font-weight: bold;
-		font-size: 1rem;
+	&-button {
+		width: initial;
 		margin: 1rem;
-		border: 2px solid $clr-primary;
-		background: transparent;
-		color: $clr-primary;
-		border-radius: $radius;
+		padding: 1rem;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 50px;
+		font-size: 1rem;
+		font-weight: bold;
+		font-family: inherit;
+		color: white;
+		background: $bright-green;
 		transition: background 200ms ease-in, color 200ms ease-in;
 	}
 
@@ -66,8 +72,38 @@ $radius: 0.2rem;
 		transform: scale(1.02);
 	}
 
-	&:hover &__btn {
-		background: $clr-primary;
+	&:hover &-button {
+		filter: brightness(95%);
 		color: white;
+	}
+}
+
+@media only screen and (max-width: 870px) {
+	.wrapper {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 870px) {
+	.wrapper {
+		width: 90%;
+	}
+}
+
+@media only screen and (min-width: 1350px) {
+	.wrapper {
+		width: 84%;
+	}
+}
+
+@media only screen and (min-width: 1750px) {
+	.wrapper {
+		width: 74%;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	.wrapper {
+		width: 64%;
 	}
 }

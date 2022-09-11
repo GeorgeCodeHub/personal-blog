@@ -30,20 +30,11 @@ const categories = [
 
 const breakpointsNavBarTriangles = {
 	width: {
-		xs: 10, // theme.breakpoints.up('xxs')
-		sm: 30, // theme.breakpoints.up('sm')
+		xs: 0, // theme.breakpoints.up('xxs')
+		sm: 0, // theme.breakpoints.up('sm')
 		md: 60, // theme.breakpoints.up('md')
 		lg: 80, // theme.breakpoints.up('lg')
 		xl: 80 // theme.breakpoints.up('xl')
-	}
-};
-
-const breakpointsButtons = {
-	width: {
-		xs: 30, // theme.breakpoints.up('xxs')
-		md: 50, // theme.breakpoints.up('md')
-		lg: 70, // theme.breakpoints.up('lg')
-		xl: 90 // theme.breakpoints.up('xl')
 	}
 };
 
@@ -59,8 +50,6 @@ const useStyles = makeStyles(({ breakpoints }: any) => ({
 
 function Header() {
 	const [navKey, setNavKey] = useState("");
-
-	const classes = useStyles();
 
 	const onNavBarChange = (event: React.SyntheticEvent, newValue: React.SetStateAction<string>) => {
 		setNavKey(newValue);
