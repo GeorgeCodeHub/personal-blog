@@ -6,6 +6,9 @@ import hljs from "highlight.js";
 import matter from "gray-matter";
 import moment from "moment";
 
+import { Button } from "@mui/material";
+import EventIcon from "@mui/icons-material/Event";
+
 import Link from "next/link";
 
 import "highlight.js/styles/base16/edge-dark.css";
@@ -29,30 +32,25 @@ export default function PostPage({
 	content: string;
 }) {
 	return (
-		<div>
-			<Link href="/">
-				<a className="btn btn-back">Go Back</a>
-			</Link>
-			<div>
-				<img src={cover_image} alt="image" />
+		<div className="post-details-container">
+			<div className="post-details-title-container">
+				<div className="post-details-title">{title}</div>
+				<div className="post-details-date">
+					<EventIcon style={{ paddingRight: 5, fontSize: 31, color: "#4fbdba" }} />
+					<span className="align-middle">Posted on {moment(date).format("DD/MM/YYYY")}</span>
+				</div>
 			</div>
 
-			<h1>{title}</h1>
-			<div>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth="2"
-						d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-					/>
-				</svg>
-				<span className="align-middle">Posted on {moment(new Date(date)).format("MMM DD, YYYY")}</span>
-			</div>
+			<img className="post-details-image" src={cover_image} alt={title} />
 
-			<div className="mt-8">
+			<div className="post-details-content mt-8">
 				<div dangerouslySetInnerHTML={{ __html: marked.parse(content) }}></div>
 			</div>
+			<Button className="post-details-button" variant="contained">
+				<Link href="/">
+					<span>RETURN TO MAIN PAGE</span>
+				</Link>
+			</Button>
 		</div>
 	);
 }

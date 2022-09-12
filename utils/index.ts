@@ -1,3 +1,5 @@
+export const baseURL = "https://georgecodehub-portfolio-server.herokuapp.com";
+
 export const sortByDate = (
 	a: { slug: string; frontmatter: { [key: string]: any } },
 	b: { slug: string; frontmatter: { [key: string]: any } }

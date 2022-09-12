@@ -1,14 +1,13 @@
-$medium-green: #1d5560;
-$bright-green: #4fbdba;
+@import "globals";
 
 $radius: 0.2rem;
 
-.wrapper {
+.cards-container {
 	gap: 2rem;
 	width: 64%;
 	display: grid;
 	padding: 40px;
-	border: 2px solid #1d5560;
+	border: 2px solid $bright-green;
 	background: #072227;
 	justify-content: center;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -26,14 +25,17 @@ $radius: 0.2rem;
 	transition: transform 200ms ease-in;
 
 	&-date {
-		top: 12px;
-		left: 12px;
-		position: absolute;
-		font-weight: bold;
-		padding: 4px 8px;
-		border-radius: $radius;
-		color: black;
-		background-color: white;
+		// top: 12px;
+		// left: 12px;
+		// position: absolute;
+		// font-weight: bold;
+		// padding: 4px 8px;
+		// border-radius: $radius;
+		// color: black;
+		// background-color: white;
+		display: flex;
+		align-items: center;
+		padding: 0.5rem 1rem 1rem 0.8rem;
 	}
 
 	&-image {
@@ -43,8 +45,9 @@ $radius: 0.2rem;
 	}
 
 	&-title {
-		padding: 1rem;
-		font-size: larger;
+		// padding: 1rem;
+		padding: 1rem 1rem 0rem;
+		font-size: 22px;
 		font-weight: bold;
 	}
 
@@ -55,15 +58,16 @@ $radius: 0.2rem;
 
 	&-button {
 		width: initial;
-		margin: 1rem;
+		margin: 0rem 1rem 1rem;
 		padding: 1rem;
-		margin-left: auto;
-		margin-right: auto;
+		// margin-left: auto;
+		// margin-right: auto;
 		border-radius: 50px;
 		font-size: 1rem;
 		font-weight: bold;
 		font-family: inherit;
 		color: white;
+		border: 1px;
 		background: $bright-green;
 		transition: background 200ms ease-in, color 200ms ease-in;
 	}
@@ -75,35 +79,36 @@ $radius: 0.2rem;
 	&:hover &-button {
 		filter: brightness(95%);
 		color: white;
+		cursor: pointer;
 	}
 }
 
 @media only screen and (max-width: 870px) {
-	.wrapper {
+	.cards-container {
 		width: 100%;
 	}
 }
 
 @media only screen and (min-width: 870px) {
-	.wrapper {
+	.cards-container {
 		width: 90%;
 	}
 }
 
 @media only screen and (min-width: 1350px) {
-	.wrapper {
+	.cards-container {
 		width: 84%;
 	}
 }
 
 @media only screen and (min-width: 1750px) {
-	.wrapper {
+	.cards-container {
 		width: 74%;
 	}
 }
 
 @media only screen and (min-width: 1800px) {
-	.wrapper {
+	.cards-container {
 		width: 64%;
 	}
 }

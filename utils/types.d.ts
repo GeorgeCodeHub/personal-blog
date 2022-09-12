@@ -8,3 +8,12 @@ export interface postType {
 	};
 	slug: string;
 }
+
+export interface projectType {
+	id: number;
+	title: string;
+	description: string;
+	images: string[];
+	githubURL: string;
+	technologies: string[];
+}

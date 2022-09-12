@@ -1,6 +1,4 @@
-$dark-green: #072227;
-$medium-green: #1d5560;
-$bright-green: #4fbdba;
+@import "globals";
 
 .navbar {
 	&-container {
@@ -11,7 +9,7 @@ $bright-green: #4fbdba;
 	}
 
 	&-triangle-left {
-		background: linear-gradient(to bottom left, $dark-green 47%, $medium-green 49%);
+		background: linear-gradient(to bottom left, $dark-green 47%, $bright-green 49%);
 		width: 100%;
 		height: 100%;
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
@@ -19,7 +17,7 @@ $bright-green: #4fbdba;
 	}
 
 	&-triangle-right {
-		background: linear-gradient(to bottom right, $dark-green 47%, $medium-green 49%);
+		background: linear-gradient(to bottom right, $dark-green 47%, $bright-green 49%);
 		width: 100%;
 		height: 100%;
 		-webkit-clip-path: polygon(0 0, 100% 0, 0 100%, 0 0);
@@ -32,11 +30,14 @@ $bright-green: #4fbdba;
 		justify-content: space-between;
 		background: $dark-green;
 		padding: 10px;
-		border-bottom: 1px solid $medium-green;
+		border-bottom: 1px solid $bright-green;
 		box-shadow: 1px 0px 0px -1px $dark-green, -1px 0px 0px -1px $dark-green;
 	}
 
 	&-logo {
+		display: flex;
+		align-items: center;
+
 		cursor: pointer;
 		&:hover {
 			color: $bright-green;
@@ -47,6 +48,7 @@ $bright-green: #4fbdba;
 		cursor: pointer;
 		padding: 4px;
 		font-weight: bold;
+		display: flex;
 
 		&:hover {
 			color: $bright-green;

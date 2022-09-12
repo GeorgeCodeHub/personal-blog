@@ -6,14 +6,14 @@ import matter from "gray-matter";
 
 import { Typography } from "@mui/material";
 
-import { PostCard, PostWidget, ProjectsView } from "../components";
+import { PostCard } from "../components";
 
 import { sortByDate } from "../utils";
 import { postType } from "../utils/types";
 
 function Home({ posts, mostRecentPosts }: { posts: postType[]; mostRecentPosts: postType[] }) {
 	return (
-		<div className="layout-container">
+		<>
 			<Head>
 				<title>Rocket Code Blog</title>
 				<meta
@@ -30,12 +30,12 @@ function Home({ posts, mostRecentPosts }: { posts: postType[]; mostRecentPosts: 
 				CAPTAIN'S LOG
 			</Typography>
 
-			<div className="wrapper">
+			<div className="cards-container">
 				{posts.map((post, index) => (
 					<PostCard key={index} post={post} />
 				))}
 			</div>
-		</div>
+		</>
 	);
 }
 

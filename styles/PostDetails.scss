@@ -1,0 +1,90 @@
+@import "globals";
+
+.post-details {
+	&-container {
+		margin-top: 5em;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		background: $dark-green;
+		border: 1px solid $bright-green;
+		padding: 1rem;
+	}
+
+	&-title-container {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid $medium-green;
+	}
+
+	&-title {
+		font-size: 22px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	&-date {
+		display: flex;
+		align-items: center;
+	}
+
+	&-image {
+		width: 80%;
+		display: flex;
+		margin: 1rem auto auto;
+	}
+
+	&-content {
+		padding: 0rem 4rem;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid $medium-green;
+
+		a {
+			color: $bright-green;
+		}
+	}
+
+	&-button {
+		display: flex;
+		margin: auto;
+		border-radius: 50px !important;
+	}
+}
+
+@media only screen and (max-width: 870px) {
+	.post-details-container {
+		width: 100%;
+	}
+
+	.post-details-content {
+		padding: 0;
+	}
+
+	.post-details-image {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 870px) {
+	.post-details-container {
+		width: 90%;
+	}
+}
+
+@media only screen and (min-width: 1350px) {
+	.post-details-container {
+		width: 84%;
+	}
+}
+
+@media only screen and (min-width: 1750px) {
+	.post-details-container {
+		width: 74%;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	.cards-container {
+		width: 64%;
+	}
+}

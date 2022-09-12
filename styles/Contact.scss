@@ -1,0 +1,25 @@
+@import "globals";
+
+.contact {
+	&-form {
+		width: 700px;
+		padding: 1rem;
+		background-color: $dark-green;
+		border: 2px solid $bright-green;
+	}
+
+	&-social-media {
+		border: 1px solid !important;
+		background-color: $bright-green;
+	}
+}
+
+.contact-social-media + .contact-social-media {
+	margin-left: 10px;
+}
+
+@media only screen and (max-width: 870px) {
+	.contact-form {
+		width: 100%;
+	}
+}

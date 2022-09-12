@@ -1,8 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+
+$dark-green: #072227;
+$medium-green: #1d5560;
+$bright-green: #4fbdba;
 
 html,
 body {
@@ -31,4 +31,40 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 15px;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #213f44;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #4fbdba;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #89c2c1;
 }

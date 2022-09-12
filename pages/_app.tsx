@@ -9,11 +9,13 @@ import createCache from "@emotion/cache";
 
 import Palette from "../utils/Palette";
 
-import "tailwindcss/tailwind.css";
 import "../styles/globals.scss";
 
+import "../styles/Contact.scss";
 import "../styles/Header.scss";
 import "../styles/PostCard.scss";
+import "../styles/PostDetails.scss";
+import "../styles/Projects.scss";
 
 interface MyAppProps extends AppProps {
 	emotionCache?: EmotionCache;
