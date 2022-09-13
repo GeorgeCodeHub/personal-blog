@@ -22,11 +22,7 @@ function Home({ posts, mostRecentPosts }: { posts: postType[]; mostRecentPosts: 
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Typography
-				style={{ marginTop: "1.5em", fontWeight: "lighter !important", letterSpacing: "1rem !important" }}
-				variant="h2"
-				gutterBottom
-			>
+			<Typography className="layout-title" variant="h2" gutterBottom>
 				CAPTAIN'S LOG
 			</Typography>
 

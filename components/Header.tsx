@@ -12,10 +12,6 @@ import EmailIcon from "@mui/icons-material/Email";
 
 import Link from "next/link";
 
-const navbarOptions = [
-	{ name: "Projects", icon: <CodeIcon />, url: "https://github.com/GeorgeCodeHub?tab=repositories" }
-];
-
 const breakpointsNavBarTriangles = {
 	width: {
 		xs: 0, // theme.breakpoints.up('xxs')
@@ -52,7 +48,7 @@ function Header() {
 							<Link href={`/projects`}>
 								<Tooltip title="Projects" placement="bottom">
 									<div className="navbar-links">
-										<EmailIcon />
+										<CodeIcon />
 									</div>
 								</Tooltip>
 							</Link>

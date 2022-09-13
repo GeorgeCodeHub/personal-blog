@@ -8,7 +8,7 @@ $radius: 0.2rem;
 	display: grid;
 	padding: 40px;
 	border: 2px solid $bright-green;
-	background: #072227;
+	background: $dark-green;
 	justify-content: center;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
@@ -35,7 +35,7 @@ $radius: 0.2rem;
 		// background-color: white;
 		display: flex;
 		align-items: center;
-		padding: 0.5rem 1rem 1rem 0.8rem;
+		padding: 0.5rem 1rem 0rem 0.8rem;
 	}
 
 	&-image {
@@ -101,13 +101,13 @@ $radius: 0.2rem;
 	}
 }
 
-@media only screen and (min-width: 1750px) {
+@media only screen and (min-width: 1550px) {
 	.cards-container {
 		width: 74%;
 	}
 }
 
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 1700px) {
 	.cards-container {
 		width: 64%;
 	}

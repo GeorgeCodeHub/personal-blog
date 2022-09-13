@@ -59,11 +59,7 @@ function Contact() {
 				<meta name="description" content="You can contact me either through e-email or social media." />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Typography
-				style={{ marginTop: "1.5em", fontWeight: "lighter !important", letterSpacing: "1rem !important" }}
-				variant="h2"
-				gutterBottom
-			>
+			<Typography className="layout-title" variant="h2" gutterBottom>
 				CONTACT
 			</Typography>
 			<form

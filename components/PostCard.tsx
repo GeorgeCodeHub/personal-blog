@@ -6,7 +6,6 @@ import EventIcon from "@mui/icons-material/Event";
 
 import Link from "next/link";
 import Router from "next/router";
-import Image from "next/image";
 
 function PostCard({ post }: { post: any }) {
 	const onCardClick = () => {
@@ -20,7 +19,7 @@ function PostCard({ post }: { post: any }) {
 				<div className="card-title">{post.frontmatter.title}</div>
 				<div className="card-date">
 					<EventIcon style={{ paddingRight: 5, fontSize: 31, color: "#4fbdba" }} />
-					<span>{moment(post.createdAt).format("DD/MM/YYYY")}</span>
+					<span>{moment(new Date(post.createdAt)).format("DD/MM/YYYY")}</span>
 				</div>
 				<p className="card-description">{post.frontmatter.excerpt}</p>
 			</div>

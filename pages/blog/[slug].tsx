@@ -37,7 +37,7 @@ export default function PostPage({
 				<div className="post-details-title">{title}</div>
 				<div className="post-details-date">
 					<EventIcon style={{ paddingRight: 5, fontSize: 31, color: "#4fbdba" }} />
-					<span className="align-middle">Posted on {moment(date).format("DD/MM/YYYY")}</span>
+					<span className="align-middle">Posted on {moment(new Date(date)).format("DD/MM/YYYY")}</span>
 				</div>
 			</div>
 
